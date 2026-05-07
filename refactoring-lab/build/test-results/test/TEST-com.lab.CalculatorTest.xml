@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.lab.CalculatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-05-07T19:22:36.468Z" hostname="LINO" time="0.043">
+  <properties/>
+  <testcase name="calc_withOneAndTwo_returnsExpectedRatio" classname="com.lab.CalculatorTest" time="0.009"/>
+  <testcase name="prtRes_doesNotThrow" classname="com.lab.CalculatorTest" time="0.012"/>
+  <testcase name="calc_withPositiveNumbers_returnsSumDividedByProduct" classname="com.lab.CalculatorTest" time="0.0"/>
+  <testcase name="calc_withLargeNumbers_doesNotOverflow" classname="com.lab.CalculatorTest" time="0.001"/>
+  <testcase name="calc_withDecimalInputs_returnsCorrectResult" classname="com.lab.CalculatorTest" time="0.0"/>
+  <system-out><![CDATA[Result: 42.0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

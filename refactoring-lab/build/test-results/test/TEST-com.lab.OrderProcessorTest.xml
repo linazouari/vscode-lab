@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.lab.OrderProcessorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-05-07T19:22:36.527Z" hostname="LINO" time="0.039">
+  <properties/>
+  <testcase name="printOrderSummary_containsItemName" classname="com.lab.OrderProcessorTest" time="0.029"/>
+  <testcase name="computeTotal_emptyItems_returnsZero" classname="com.lab.OrderProcessorTest" time="0.001"/>
+  <testcase name="computeTotal_memberMultipleItems_discountAppliedToFullSum" classname="com.lab.OrderProcessorTest" time="0.001"/>
+  <testcase name="computeTotal_nonMemberSingleItem_returnsFullPrice" classname="com.lab.OrderProcessorTest" time="0.001"/>
+  <testcase name="computeTotal_multipleItems_sumsAllCorrectly" classname="com.lab.OrderProcessorTest" time="0.001"/>
+  <testcase name="printOrderSummary_member_showsDiscountedTotal" classname="com.lab.OrderProcessorTest" time="0.002"/>
+  <testcase name="printOrderSummary_containsCustomerName" classname="com.lab.OrderProcessorTest" time="0.001"/>
+  <testcase name="printOrderSummary_containsOrderSummaryHeader" classname="com.lab.OrderProcessorTest" time="0.001"/>
+  <testcase name="computeTotal_memberSingleItem_appliesTenPercentDiscount" classname="com.lab.OrderProcessorTest" time="0.001"/>
+  <testcase name="printOrderSummary_nonMember_showsCorrectTotal" classname="com.lab.OrderProcessorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
