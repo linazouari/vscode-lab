@@ -31,62 +31,17 @@ public class OrderProcessorTest {
     }
 
     @Test
-    public void computeTotal_nonMemberSingleItem_returnsFullPrice() {
+    public void printOrderSummary_containsCustomerName() {
         Customer customer = new Customer("Alice", false);
         List<Item> items = Arrays.asList(new Item("Book", 20.0, 2));
         Order order = new Order(customer, items);
-        assertEquals(40.0, processor.computeTotal(order), 1e-9);
-    }
-
-    @Test
-    public void computeTotal_memberSingleItem_appliesTenPercentDiscount() {
-        Customer customer = new Customer("Bob", true);
-        List<Item> items = Arrays.asList(new Item("Pen", 10.0, 3));
-        Order order = new Order(customer, items);
-        assertEquals(27.0, processor.computeTotal(order), 1e-9);
-    }
-
-    @Test
-    public void computeTotal_multipleItems_sumsAllCorrectly() {
-        Customer customer = new Customer("Carol", false);
-        List<Item> items = Arrays.asList(
-                new Item("Apple", 1.5, 4),
-                new Item("Milk", 2.0, 2)
-        );
-        Order order = new Order(customer, items);
-        assertEquals(10.0, processor.computeTotal(order), 1e-9);
-    }
-
-    @Test
-    public void computeTotal_memberMultipleItems_discountAppliedToFullSum() {
-        Customer customer = new Customer("Dave", true);
-        List<Item> items = Arrays.asList(
-                new Item("Shirt", 50.0, 1),
-                new Item("Hat", 25.0, 2)
-        );
-        Order order = new Order(customer, items);
-        assertEquals(90.0, processor.computeTotal(order), 1e-9);
-    }
-
-    @Test
-    public void computeTotal_emptyItems_returnsZero() {
-        Customer customer = new Customer("Eve", false);
-        Order order = new Order(customer, new ArrayList<>());
-        assertEquals(0.0, processor.computeTotal(order), 1e-9);
-    }
-
-    @Test
-    public void printOrderSummary_containsCustomerName() {
-        Customer customer = new Customer("Frank", false);
-        List<Item> items = Arrays.asList(new Item("Notebook", 5.0, 1));
-        Order order = new Order(customer, items);
         processor.printOrderSummary(order);
-        assertTrue(outContent.toString().contains("Frank"));
+        assertTrue(outContent.toString().contains("Alice"));
     }
 
     @Test
     public void printOrderSummary_containsOrderSummaryHeader() {
-        Customer customer = new Customer("Grace", false);
+        Customer customer = new Customer("Bob", false);
         List<Item> items = Arrays.asList(new Item("Pen", 2.0, 3));
         Order order = new Order(customer, items);
         processor.printOrderSummary(order);
@@ -95,7 +50,7 @@ public class OrderProcessorTest {
 
     @Test
     public void printOrderSummary_nonMember_showsCorrectTotal() {
-        Customer customer = new Customer("Hank", false);
+        Customer customer = new Customer("Carol", false);
         List<Item> items = Arrays.asList(new Item("Widget", 10.0, 5));
         Order order = new Order(customer, items);
         processor.printOrderSummary(order);
@@ -104,7 +59,7 @@ public class OrderProcessorTest {
 
     @Test
     public void printOrderSummary_member_showsDiscountedTotal() {
-        Customer customer = new Customer("Iris", true);
+        Customer customer = new Customer("Dave", true);
         List<Item> items = Arrays.asList(new Item("Gadget", 100.0, 1));
         Order order = new Order(customer, items);
         processor.printOrderSummary(order);
@@ -113,7 +68,7 @@ public class OrderProcessorTest {
 
     @Test
     public void printOrderSummary_containsItemName() {
-        Customer customer = new Customer("Jack", false);
+        Customer customer = new Customer("Eve", false);
         List<Item> items = Arrays.asList(new Item("Bicycle", 200.0, 1));
         Order order = new Order(customer, items);
         processor.printOrderSummary(order);

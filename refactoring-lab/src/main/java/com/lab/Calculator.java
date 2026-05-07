@@ -10,28 +10,16 @@ package com.lab;
  *   x      -> sum
  *   y      -> product
  */
+
 public class Calculator {
 
-    public double calculateSumProductRatio(double num1, double num2) {
-        double sum = num1 + num2;
-        double product = num1 * num2;
-        return sum / product;
-    }
-
-    public void printResult(double result) {
-        System.out.println("Result: " + result);
-    }
-
-    // Bridge methods so existing tests remain green after rename
-    /** @deprecated use calculateSumProductRatio */
-    @Deprecated
     public double calc(double a, double b) {
-        return calculateSumProductRatio(a, b);
+        double x = a + b;
+        double y = a * b;
+        return x / y;
     }
 
-    /** @deprecated use printResult */
-    @Deprecated
     public void prtRes(double res) {
-        printResult(res);
+        System.out.println("Result: " + res);
     }
 }
